@@ -42,6 +42,7 @@ Star Borough), UAF (University of Alaska Fairbanks).
 | tools/build_timeline.py | Our own work | Cleared | |
 | site/index.html, site/style.css, site/timeline.js | Our own work; scroll layout and carousel adapted from Codrops demos (MIT License) | Cleared | The site shows only images marked Cleared above. Codrops credited in the page footer. |
 | .gitignore | Our own work | Cleared | |
+| index.html | Our own work | Cleared | Redirect to the site. |
 
 ## Held out of the repo
 
