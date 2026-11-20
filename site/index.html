@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clipper Mine History</title>
+<meta name="description" content="The Clipper Mine on Ester Dome, Alaska, and the Lamont-Doherty seismograph station that ran inside it from 1970 to 1972. Every line sourced.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,900;1,9..144,300&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.className = "js";</script>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="hero-map" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="kicker rise d1"><span>Ester Dome, Alaska</span><span>sec. 32, T. 1 N., R. 2 W.</span></p>
+    <h1 class="rise d2">The Clipper<br>Mine</h1>
+    <p class="sub rise d3">and the station inside it</p>
+  </div>
+  <figure class="trace rise d4">
+    <svg id="trace" viewBox="0 0 1200 160" preserveAspectRatio="none" role="img" aria-label="Illustrative seismograph trace"></svg>
+    <figcaption>Illustration, not a station recording. Behind the title: the station drift on the 1982 state mine map, DGGS OFR 157 Plate 1.</figcaption>
+  </figure>
+  <p class="scroll-cue rise d5">Scroll to walk in</p>
+</header>
+
+<section class="intro">
+  <span class="lab lab-a">Mine</span>
+  <span class="val val-a">Clipper, also called Lounsbury</span>
+  <span class="lab lab-b">Station</span>
+  <span class="val val-b">FBK, Lamont-Doherty, 1970 to 1972</span>
+  <h2 class="intro-title"><span>Gold, then</span><span>the quiet earth</span></h2>
+  <span class="lab lab-c">Story</span>
+  <div class="intro-text">
+    <p>Development work at the Clipper began in 1927, and the early workings were mined by hand. <span class="src">1927: OFR 157 p. 1 (Document). Hand mining: D. Wietchy, 2000, in ARDF FB047 p. 101 (Reported).</span></p>
+    <p>In 1970 Columbia University's Lamont-Doherty station, paid for by ARPA (Advanced Research Projects Agency) through the Air Force Office of Scientific Research (AFOSR) for nuclear-test-detection research, moved into a side tunnel 130 m from the entrance, under 20 m of rock. <span class="src">Lamont 1971, report pp. 1, 11</span></p>
+  </div>
+</section>
+
+<div class="walk-wrap">
+  <div class="walk" id="walk" role="figure" aria-label="Archive pieces in a row; the station door grows to fill the screen">
+    <div class="w-item s" style="background-image:url('../maps/DGGS%201982%2C%20Plate%201%20crop%2C%20location%20map.png')"></div>
+    <div class="w-item m" style="background-image:url('../maps/Lamont%201971%2C%20Figure%20II-1%2C%20Old%20Clipper%20mine%20plan.png')"></div>
+    <div class="w-item l" style="background-image:url('../model/Model%20v2%20still%2C%20portal%20and%20drift%20(approx%2C%20from%20Plate%201%201982).png')"></div>
+    <div class="w-item xl" style="background-image:url('../photos/Lamont%201971%20plates/Lamont%201971%2C%20Plate%207%2C%20door%20photo%20crop.png')"></div>
+    <div class="w-item l" style="background-image:url('../maps/DGGS%201982%2C%20Plate%201%20crop%2C%20Lamont-Doherty%20seismograph%20station%20(abandoned).png')"></div>
+    <div class="w-item m" style="background-image:url('../maps/USMS%202493%20Grass%20Valley%20mineral%20survey%20plat%2C%20recorded%202001.jpg')"></div>
+    <div class="w-item s" style="background-image:url('../maps/Lamont%201971%2C%20Figure%20I-2%2C%20station%20location%20map.png')"></div>
+    <div class="w-caption">
+      <p class="q">Entrance to Old Clipper Seismic Station. Note: end of ore car tracks in foreground.</p>
+      <p class="src">Lamont 1971, Plate 7, report p. 52. DTIC AD0729918, approved for public release.</p>
+    </div>
+  </div>
+</div>
+
+<section class="reel" id="reel" aria-roledescription="carousel" aria-label="Images from the record">
+  <div class="reel-head">
+    <h2><span class="tag">Archive</span>From the record</h2>
+    <div class="reel-ctrl">
+      <span class="reel-count" aria-live="polite"><b id="reel-n">01</b> / <span id="reel-t">00</span></span>
+      <button type="button" class="reel-btn" id="reel-prev" aria-label="Previous image">&larr;</button>
+      <button type="button" class="reel-btn" id="reel-next" aria-label="Next image">&rarr;</button>
+    </div>
+  </div>
+  <div class="reel-stage" id="reel-stage" tabindex="0"></div>
+  <div class="reel-cap" id="reel-cap"><p class="t"></p><p class="src"></p></div>
+</section>
+
+<section class="stats" aria-label="Key numbers">
+  <div class="stat reveal"><b>1927</b><span>development work begins</span><i>OFR 157 p. 1</i></div>
+  <div class="stat reveal"><b>1,400<small>oz</small></b><span>gold in the best years, 1937 to 1942</span><i>Reported: G.P. Lounsbury, OFR 157 p. 3</i></div>
+  <div class="stat reveal"><b>130<small>m</small></b><span>entrance to station, under 20 m of rock</span><i>Lamont 1971, report p. 11</i></div>
+  <div class="stat reveal"><b>4</b><span>rooms behind ship-type bulkhead doors</span><i>Lamont 1971, report p. 11</i></div>
+  <div class="stat reveal"><b>25 Apr 1972</b><span>date of the final recordings</span><i>Lamont 1973, report p. 5</i></div>
+</section>
+
+<main>
+<section class="know reveal">
+  <h2><span class="tag">Evidence</span>How we know it was here</h2>
+  <ol>
+    <li><span class="n">I</span><p>The 1971 Lamont report names the station <q>Old Clipper Mine</q>.</p><span class="src">DTIC AD0729918, report p. 1</span></li>
+    <li><span class="n">II</span><p>The 1982 state mine map labels a side drift <q>Lamont-Doherty Seismograph Station (Abandoned)</q>.</p><span class="src">DGGS OFR 157, Plate 1</span></li>
+    <li><span class="n">III</span><p>The report's own location map puts the station in Section 32, where the mine is.</p><span class="src">AD0729918, Figure I-2, report p. 4</span></li>
+  </ol>
+</section>
+
+<section class="timeline-wrap">
+  <div class="tl-head reveal">
+    <h2><span class="tag">1918 to 2024</span>Down the drift</h2>
+    <p class="legend"><span class="grade g-document">Document</span> a primary document says it <span class="grade g-reported">Reported</span> a person or secondary source says it, named under the entry</p>
+    <div class="filters" role="group" aria-label="Filter the timeline">
+      <button type="button" data-filter="All" class="on">All</button>
+      <button type="button" data-filter="Mine">Mine</button>
+      <button type="button" data-filter="Station">Station</button>
+      <button type="button" data-filter="Maps">Maps</button>
+      <button type="button" data-filter="People">People</button>
+    </div>
+  </div>
+  <div id="timeline"><p class="loading">Loading the timeline.</p></div>
+</section>
+</main>
+
+<footer class="foot">
+  <p class="foot-big">Every entry is checked against its source, page by page.</p>
+  <p>Full citations, rights and open questions: SOURCES.md, RIGHTS.md and OPEN-QUESTIONS.md in this repository.</p>
+  <p class="abbr">DTIC (Defense Technical Information Center). DGGS (Alaska Division of Geological and Geophysical Surveys). OFR (Open-File Report). USGS (US Geological Survey). ARDF (Alaska Resource Data File). NOAA (National Oceanic and Atmospheric Administration). FBK (the station's code).</p>
+  <p class="abbr">Scroll layout adapted from Codrops "On-Scroll Image Layout Animations", and the image carousel from Codrops "Slideshow Animations", demo 1 (both MIT License). Animation by GSAP, Flip and ScrollTrigger (GSAP standard license). Smooth scroll by Lenis (MIT License).</p>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/Flip.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="timeline.js"></script>
+</body>
+</html>
