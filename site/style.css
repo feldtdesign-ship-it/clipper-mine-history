@@ -87,13 +87,14 @@ h1 {
 .reel-count b { color: #d4a646; font-weight: 500; }
 .reel-btn { width: 56px; height: 56px; border: 1px solid #4a4134; background: transparent; color: #e9e2d4; font-size: 20px; cursor: pointer; transition: background 0.25s, color 0.25s, border-color 0.25s; }
 .reel-btn:hover, .reel-btn:focus-visible { background: #d4a646; color: #0d0c0a; border-color: #d4a646; outline: none; }
-.reel-stage { position: relative; height: min(78vh, 820px); overflow: hidden; background: #070706; border: 1px solid #2c271f; outline: none; touch-action: pan-y; }
+.reel-stage { position: relative; height: min(82vh, 860px); overflow: hidden; background: #000; border: 0; outline: none; touch-action: pan-y; }
 .reel-stage:focus-visible { border-color: #d4a646; }
-.r-slide { position: absolute; inset: 0; overflow: hidden; pointer-events: none; opacity: 0; }
-.r-slide.cur { pointer-events: auto; opacity: 1; z-index: 2; }
-.r-img { position: absolute; inset: 0; background-size: contain; background-position: 50% 50%; background-repeat: no-repeat; }
-.r-slide.paper .r-img { inset: 3vh 3vw; background-color: #efe9dc; box-shadow: 0 30px 80px rgba(0,0,0,0.7); }
-.r-slide.dark .r-img { background-color: #000; }
+.r-track { position: absolute; top: 0; left: 0; height: 100%; display: flex; align-items: center; gap: 2rem; will-change: transform; }
+.r-tile { flex: none; height: 24%; aspect-ratio: 2 / 3; padding: 0; border: 0; background-color: #000; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; cursor: pointer; filter: grayscale(1) brightness(0.8); box-shadow: 0 20px 50px rgba(0,0,0,0.8); transition: filter 0.4s; }
+.r-tile:hover, .r-tile:focus-visible { filter: grayscale(1) brightness(1.05); outline: 1px solid #d4a646; outline-offset: 4px; }
+.r-tile.cur { height: 100%; aspect-ratio: 2 / 3; background-size: contain; filter: none; cursor: zoom-in; box-shadow: none; }
+.r-tile.cur:hover, .r-tile.cur:focus-visible { outline: none; }
+@media (min-width: 900px) { .r-tile.cur { aspect-ratio: 4 / 5; } }
 .reel-cap { display: grid; grid-template-columns: 1fr auto; gap: 1vw; align-items: baseline; padding: 2.4vh 0 0; border-bottom: 1px solid #3a342b; padding-bottom: 2.4vh; min-height: 9vh; }
 .reel-cap .t { margin: 0; font: 300 clamp(20px, 2vw, 28px)/1.25 "Fraunces", serif; color: #f4ecdc; }
 .reel-cap .src { margin: 0; text-align: right; max-width: 34em; }
@@ -180,3 +181,20 @@ h2 { font: 600 clamp(32px, 4vw, 56px)/1.05 "Fraunces", serif; letter-spacing: -0
 html, body { overflow-x: clip; }
 .row > *, .intro > *, .stat, .reel-cap > * { min-width: 0; }
 .src, .row .ev, .row .note, .stat i { overflow-wrap: anywhere; }
+
+.reel-hint { font: 11px/1 "IBM Plex Mono", monospace; letter-spacing: 0.16em; text-transform: uppercase; color: #6f6656; margin: 1.4vh 0 0; }
+.lb { position: fixed; inset: 0; z-index: 300; background: #000; display: none; overflow: hidden; touch-action: none; }
+.lb.open { display: block; }
+.lb-img { position: absolute; left: 50%; top: 50%; max-width: 94vw; max-height: 86vh; transform-origin: 0 0; cursor: zoom-in; user-select: none; -webkit-user-drag: none; }
+.lb.zoomed .lb-img { cursor: grab; max-width: none; max-height: none; }
+.lb.zoomed.drag .lb-img { cursor: grabbing; }
+.lb-bar { position: absolute; left: 0; right: 0; bottom: 0; display: flex; gap: 2vw; align-items: baseline; justify-content: space-between; padding: 2vh 3vw; background: linear-gradient(0deg, rgba(0,0,0,0.92), rgba(0,0,0,0)); }
+.lb-bar .t { margin: 0; font: 300 clamp(16px, 1.6vw, 22px)/1.3 "Fraunces", serif; color: #f4ecdc; max-width: 60em; }
+.lb-bar .src { margin: 0; text-align: right; }
+.lb-x, .lb-prev, .lb-next { position: absolute; width: 52px; height: 52px; border: 1px solid #4a4134; background: rgba(0,0,0,0.6); color: #e9e2d4; font-size: 20px; cursor: pointer; }
+.lb-x { top: 2vh; right: 2vw; }
+.lb-prev { top: 50%; left: 2vw; transform: translateY(-50%); }
+.lb-next { top: 50%; right: 2vw; transform: translateY(-50%); }
+.lb-x:hover, .lb-prev:hover, .lb-next:hover, .lb-x:focus-visible, .lb-prev:focus-visible, .lb-next:focus-visible { background: #d4a646; color: #0d0c0a; border-color: #d4a646; outline: none; }
+.lb-help { position: absolute; top: 2.6vh; left: 3vw; font: 11px/1 "IBM Plex Mono", monospace; letter-spacing: 0.16em; text-transform: uppercase; color: #8c8272; }
+@media (max-width: 700px) { .lb-bar { flex-direction: column; } .lb-bar .src { text-align: left; } }
