@@ -66,19 +66,6 @@ h1 {
 .intro-text p { margin: 0 0 1.2em; }
 .src { display: block; font: 12px/1.4 "IBM Plex Mono", monospace; color: #9a8f7c; margin-top: 0.4em; letter-spacing: 0.02em; }
 
-.walk-wrap { position: relative; width: 100%; height: 100svh; display: flex; align-items: center; justify-content: center; overflow: hidden; margin: 10vh 0; }
-.walk { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; gap: 2rem; }
-.w-item { flex: none; aspect-ratio: 2 / 3; height: 20vh; background-size: cover; background-position: 50% 50%; background-color: #efe9dc; filter: grayscale(1) contrast(1.05); box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
-.w-item.m { height: 25vh; }
-.w-item.l { height: 50vh; }
-.w-item.xl { height: 75vh; z-index: 10; background-color: #000; filter: none; }
-.walk.switch .w-item.m, .walk.switch .w-item.l { height: 20vh; }
-.walk.switch .w-item.xl { height: 100svh; width: 100vw; aspect-ratio: auto; background-size: contain; }
-.w-caption { position: absolute; left: 0; bottom: -50vh; z-index: 20; width: 100%; max-width: 780px; padding: 0 5vw 6vh; opacity: 0; }
-.walk.switch .w-caption { bottom: 0; opacity: 1; }
-.w-caption .q { margin: 0 0 0.6em; font: 300 clamp(24px, 3vw, 40px)/1.15 "Fraunces", serif; color: #f4ecdc; text-shadow: 0 2px 30px #000; }
-.w-caption .src { color: #c9bea9; }
-
 .reel { max-width: 1400px; margin: 14vh auto 0; padding: 0 5vw; }
 .reel-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 2vh 2vw; margin-bottom: 3vh; }
 .reel-head h2 { margin: 0; }
@@ -95,6 +82,7 @@ h1 {
 .r-tile:hover, .r-tile:focus-visible { filter: grayscale(1) brightness(1); outline: none; }
 .r-tile:focus-visible img { outline: 1px solid #d4a646; outline-offset: 4px; }
 .r-tile.cur { height: 86%; filter: none; cursor: zoom-in; }
+.r-tile.cur img { max-height: 100%; }
 .r-tile.cur img { box-shadow: 0 40px 120px rgba(0,0,0,0.9); }
 .reel-cap { display: grid; grid-template-columns: 1fr auto; gap: 1vw; align-items: baseline; padding: 2.4vh 0 0; border-bottom: 1px solid #3a342b; padding-bottom: 2.4vh; min-height: 9vh; }
 .reel-cap .t { margin: 0; font: 300 clamp(20px, 2vw, 28px)/1.25 "Fraunces", serif; color: #f4ecdc; }
@@ -165,9 +153,6 @@ h2 { font: 600 clamp(32px, 4vw, 56px)/1.05 "Fraunces", serif; letter-spacing: -0
   .stats { grid-template-columns: 1fr 1fr; }
   .stat { border-bottom: 1px solid #3a342b; }
   .know ol { grid-template-columns: 1fr; }
-  .walk { gap: 0.8rem; }
-  .w-item { height: 12vh; } .w-item.m { height: 15vh; } .w-item.l { height: 26vh; } .w-item.xl { height: 52vh; }
-  .walk.switch .w-item.m, .walk.switch .w-item.l { height: 12vh; }
 }
 @media (max-width: 560px) {
   .row { grid-template-columns: 1fr; gap: 0.6em; }
@@ -203,3 +188,5 @@ html, body { overflow-x: clip; }
 .r-tile { display: flex; align-items: center; justify-content: center; }
 .r-tile.cur img { height: auto; max-height: 100%; max-width: min(80vw, 1150px); }
 .r-tile.cur:has(img) { height: 86%; }
+
+.lb.nozoom .lb-img { cursor: default; }

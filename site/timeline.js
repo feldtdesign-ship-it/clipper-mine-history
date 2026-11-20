@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var hasGsap = typeof window.gsap !== "undefined" && typeof window.Flip !== "undefined" && typeof window.ScrollTrigger !== "undefined";
+  var hasGsap = typeof window.gsap !== "undefined" && typeof window.Flip !== "undefined";
 
   function drawTrace() {
     var svg = document.getElementById("trace");
@@ -32,32 +32,6 @@
     p.getBoundingClientRect();
     p.style.transition = "stroke-dashoffset 4.5s cubic-bezier(.45,0,.2,1) 0.9s";
     p.style.strokeDashoffset = "0";
-  }
-
-  function walkIn() {
-    var gallery = document.getElementById("walk");
-    if (!gallery) { return; }
-    if (!hasGsap || reduce) { gallery.classList.add("switch"); return; }
-    gsap.registerPlugin(ScrollTrigger, Flip);
-    if (typeof window.Lenis !== "undefined") {
-      var lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
-      window.__lenis = lenis;
-      lenis.on("scroll", function () { ScrollTrigger.update(); });
-      gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
-      gsap.ticker.lagSmoothing(0);
-    }
-    var items = gallery.querySelectorAll(".w-item");
-    var cap = gallery.querySelector(".w-caption");
-    gallery.classList.add("switch");
-    var state = Flip.getState([items, cap], { props: "filter, opacity" });
-    gallery.classList.remove("switch");
-    Flip.to(state, {
-      ease: "none",
-      absolute: false,
-      scale: true,
-      simple: true,
-      scrollTrigger: { trigger: gallery, start: "center center", end: "+=300%", pin: gallery.parentNode, scrub: true }
-    });
   }
 
   function reveals() {
@@ -136,7 +110,6 @@
       host.appendChild(sec);
     });
     reveals();
-    if (hasGsap && !reduce) { ScrollTrigger.refresh(); }
   }
 
   function filters() {
@@ -155,8 +128,7 @@
           });
           sec.hidden = shown === 0;
         });
-        if (hasGsap && !reduce) { ScrollTrigger.refresh(); }
-      });
+          });
     });
   }
 
@@ -185,7 +157,8 @@
     function reset() {
       var w = img.naturalWidth || 1, h = img.naturalHeight || 1;
       var vw = window.innerWidth, vh = window.innerHeight;
-      fit = Math.min(vw * 0.94 / w, vh * 0.8 / h);
+      fit = Math.min(vw * 0.94 / w, vh * 0.8 / h, 1);
+      lb.classList.toggle("nozoom", fit >= 0.98);
       s = fit; zoomed = false; lb.classList.remove("zoomed");
       tx = (vw - w * s) / 2; ty = (vh * 0.9 - h * s) / 2;
       apply();
@@ -208,21 +181,19 @@
     function open(i) {
       lastFocus = document.activeElement;
       lb.hidden = false; lb.classList.add("open");
-      if (window.__lenis) { window.__lenis.stop(); }
       document.documentElement.style.overflow = "hidden";
       show(i);
       document.getElementById("lb-x").focus();
     }
     function close() {
       lb.classList.remove("open"); lb.hidden = true;
-      if (window.__lenis) { window.__lenis.start(); }
       document.documentElement.style.overflow = "";
       if (lastFocus) { lastFocus.focus(); }
     }
     img.addEventListener("pointerdown", function (e) {
       e.preventDefault(); moved = false;
       drag = { x: e.clientX, y: e.clientY, tx: tx, ty: ty };
-      img.setPointerCapture(e.pointerId);
+      try { img.setPointerCapture(e.pointerId); } catch (err) { }
     });
     img.addEventListener("pointermove", function (e) {
       if (!drag) { return; }
@@ -233,13 +204,13 @@
     img.addEventListener("pointerup", function (e) {
       lb.classList.remove("drag");
       if (!moved) {
-        if (zoomed) { reset(); } else { zoomAt(e.clientX, e.clientY, Math.max(fit * 3, 1)); }
+        if (zoomed) { reset(); } else if (fit < 0.98) { zoomAt(e.clientX, e.clientY, 1); }
       }
       drag = null;
     });
     lb.addEventListener("wheel", function (e) {
       e.preventDefault();
-      var ns = Math.min(Math.max(s * (e.deltaY < 0 ? 1.15 : 1 / 1.15), fit), fit * 8);
+      var ns = Math.min(Math.max(s * (e.deltaY < 0 ? 1.15 : 1 / 1.15), fit), 1);
       zoomAt(e.clientX, e.clientY, ns);
     }, { passive: false });
     lb.addEventListener("click", function (e) { if (e.target === lb) { close(); } });
@@ -274,7 +245,7 @@
       im.draggable = false;
       im.decoding = "async";
       im.src = "../" + encodeURI(s[0]).replace(/,/g, "%2C").replace(/'/g, "%27");
-      im.addEventListener("load", function () { center(false); });
+      im.addEventListener("load", function () { im.dataset.nh = im.naturalHeight; im.dataset.nw = im.naturalWidth; cap(); center(false); });
       b.appendChild(im);
       b.addEventListener("click", function () {
         if (moved) { return; }
@@ -288,6 +259,14 @@
       var t = tiles[cur];
       var x = stage.clientWidth / 2 - (t.offsetLeft + t.offsetWidth / 2);
       if (hasGsap && animate) { gsap.set(track, { x: x }); } else { track.style.transform = "translateX(" + x + "px)"; }
+    }
+    function cap() {
+      tiles.forEach(function (t, k) {
+        var im = t.firstChild;
+        if (!im.dataset.nh) { return; }
+        im.style.maxHeight = k === cur ? "min(100%, " + im.dataset.nh + "px)" : "";
+        im.style.maxWidth = k === cur ? "min(80vw, 1150px, " + im.dataset.nw + "px)" : "";
+      });
     }
     function caption() {
       capT.textContent = SLIDES[cur][2];
@@ -310,7 +289,7 @@
       var anim = hasGsap && !reduce;
       var before = tiles.map(function (t) { return t.getBoundingClientRect().left; });
       var state = anim ? Flip.getState(tiles) : null;
-      cur = next; order(); mark(); center(false); caption();
+      cur = next; order(); mark(); cap(); center(false); caption();
       if (anim) {
         var jumpers = tiles.filter(function (t, k) { return Math.abs(t.getBoundingClientRect().left - before[k]) > stage.clientWidth * 0.6; });
         Flip.from(state, { duration: 1.1, ease: "power3.inOut", scale: false, simple: true, targets: tiles.filter(function (t) { return jumpers.indexOf(t) < 0; }) });
@@ -341,7 +320,6 @@
 
   drawTrace();
   reel();
-  walkIn();
   reveals();
   filters();
 

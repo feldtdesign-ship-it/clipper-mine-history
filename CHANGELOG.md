@@ -27,3 +27,8 @@ Corrected against the brief's seed list
 New findings
 - The USMS 2493 plat prints a claim corner position near 64 51 N, which bears on the coordinate question.
 - The plat may carry a 1988 survey date. Not used; see OPEN-QUESTIONS.md.
+
+## 20 Nov 2026, v1.1
+
+- Removed the scroll walk-in section from the site. It did not work well mid-scroll.
+- Removed the smooth-scroll library (Lenis) and ScrollTrigger; the page now scrolls normally.
