@@ -269,7 +269,13 @@
       var b = el("button", "r-tile");
       b.type = "button";
       b.setAttribute("aria-label", s[2]);
-      b.style.backgroundImage = "url(\"../" + encodeURI(s[0]).replace(/,/g, "%2C").replace(/'/g, "%27") + "\")";
+      var im = document.createElement("img");
+      im.alt = "";
+      im.draggable = false;
+      im.decoding = "async";
+      im.src = "../" + encodeURI(s[0]).replace(/,/g, "%2C").replace(/'/g, "%27");
+      im.addEventListener("load", function () { center(false); });
+      b.appendChild(im);
       b.addEventListener("click", function () {
         if (moved) { return; }
         if (i === cur) { viewer.open(cur); } else { goTo(i); }

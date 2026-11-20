@@ -89,12 +89,13 @@ h1 {
 .reel-btn:hover, .reel-btn:focus-visible { background: #d4a646; color: #0d0c0a; border-color: #d4a646; outline: none; }
 .reel-stage { position: relative; height: min(82vh, 860px); overflow: hidden; background: #000; border: 0; outline: none; touch-action: pan-y; }
 .reel-stage:focus-visible { border-color: #d4a646; }
-.r-track { position: absolute; top: 0; left: 0; height: 100%; display: flex; align-items: center; gap: 2rem; will-change: transform; }
-.r-tile { flex: none; height: 24%; aspect-ratio: 2 / 3; padding: 0; border: 0; background-color: #000; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; cursor: pointer; filter: grayscale(1) brightness(0.8); box-shadow: 0 20px 50px rgba(0,0,0,0.8); transition: filter 0.4s; }
-.r-tile:hover, .r-tile:focus-visible { filter: grayscale(1) brightness(1.05); outline: 1px solid #d4a646; outline-offset: 4px; }
-.r-tile.cur { height: 100%; aspect-ratio: 2 / 3; background-size: contain; filter: none; cursor: zoom-in; box-shadow: none; }
-.r-tile.cur:hover, .r-tile.cur:focus-visible { outline: none; }
-@media (min-width: 900px) { .r-tile.cur { aspect-ratio: 4 / 5; } }
+.r-track { position: absolute; top: 0; left: 0; height: 100%; display: flex; align-items: center; gap: 2.4rem; will-change: transform; }
+.r-tile { flex: none; height: 26%; padding: 0; border: 0; background: none; cursor: pointer; display: block; filter: grayscale(1) brightness(0.75); transition: filter 0.4s; }
+.r-tile img { display: block; height: 100%; width: auto; max-width: none; pointer-events: none; user-select: none; box-shadow: 0 20px 50px rgba(0,0,0,0.85); }
+.r-tile:hover, .r-tile:focus-visible { filter: grayscale(1) brightness(1); outline: none; }
+.r-tile:focus-visible img { outline: 1px solid #d4a646; outline-offset: 4px; }
+.r-tile.cur { height: 86%; filter: none; cursor: zoom-in; }
+.r-tile.cur img { box-shadow: 0 40px 120px rgba(0,0,0,0.9); }
 .reel-cap { display: grid; grid-template-columns: 1fr auto; gap: 1vw; align-items: baseline; padding: 2.4vh 0 0; border-bottom: 1px solid #3a342b; padding-bottom: 2.4vh; min-height: 9vh; }
 .reel-cap .t { margin: 0; font: 300 clamp(20px, 2vw, 28px)/1.25 "Fraunces", serif; color: #f4ecdc; }
 .reel-cap .src { margin: 0; text-align: right; max-width: 34em; }
@@ -198,3 +199,7 @@ html, body { overflow-x: clip; }
 .lb-x:hover, .lb-prev:hover, .lb-next:hover, .lb-x:focus-visible, .lb-prev:focus-visible, .lb-next:focus-visible { background: #d4a646; color: #0d0c0a; border-color: #d4a646; outline: none; }
 .lb-help { position: absolute; top: 2.6vh; left: 3vw; font: 11px/1 "IBM Plex Mono", monospace; letter-spacing: 0.16em; text-transform: uppercase; color: #8c8272; }
 @media (max-width: 700px) { .lb-bar { flex-direction: column; } .lb-bar .src { text-align: left; } }
+
+.r-tile { display: flex; align-items: center; justify-content: center; }
+.r-tile.cur img { height: auto; max-height: 100%; max-width: min(80vw, 1150px); }
+.r-tile.cur:has(img) { height: 86%; }
