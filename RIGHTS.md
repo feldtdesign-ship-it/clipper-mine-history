@@ -31,7 +31,6 @@ Star Borough), UAF (University of Alaska Fairbanks).
 | photos/Lamont 1971 plates/Lamont 1971, Plate 7, entrance to Old Clipper Seismic Station.png | Columbia University; public release | Cleared | Crop of AD0729918. Credit Lamont-Doherty. |
 | photos/Lamont 1971 plates/captions.md | Our own writing | Cleared | |
 | photos/Lamont 1971 plates/Lamont 1971, Plate 7, door photo crop.png | Columbia University; public release | Cleared | Our crop of Plate 7, page margins and scanning sticker removed. Credit Lamont-Doherty. |
-| site/vendor/gsap.min.js, site/vendor/Flip.min.js | GreenSock | Cleared | GSAP standard license (free use). Copied from the Codrops demo. License header kept in each file. |
 | film/Ester 1950s, AAF-1869.md | Our own writing; facts from the UAF archive record | Cleared | Record and link only. |
 | audio/README.md | Our own writing | Cleared | Citation and link only. |
 | model/Model v2 still, portal and drift (approx, from Plate 1 1982).png | Our own work | Cleared | Owner labels hidden; checked by eye. |
@@ -39,7 +38,7 @@ Star Borough), UAF (University of Alaska Fairbanks).
 | model/captions.md | Our own writing | Cleared | |
 | README.md, TIMELINE.md, timeline.csv, SOURCES.md, RIGHTS.md, ORGANIZATIONS.md, OPEN-QUESTIONS.md, CHANGELOG.md | Our own writing | Cleared | |
 | tools/build_timeline.py | Our own work | Cleared | |
-| site/index.html, site/style.css, site/timeline.js | Our own work; carousel adapted from a Codrops demo (MIT License) | Cleared | The site shows only images marked Cleared above. Codrops credited in the page footer. |
+| site/index.html, site/style.css, site/timeline.js | Our own work | Cleared | The site shows only images marked Cleared above. |
 | .gitignore | Our own work | Cleared | |
 | index.html | Our own work | Cleared | Redirect to the site. |
 

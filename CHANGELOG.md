@@ -32,3 +32,23 @@ New findings
 
 - Removed the scroll walk-in section from the site. It did not work well mid-scroll.
 - Removed the smooth-scroll library (Lenis) and ScrollTrigger; the page now scrolls normally.
+
+## 23 Nov 2026, v1.2
+
+Added
+- Site: new section "Five strings, one knot." Five dated threads from 1951 to 1970 (listening at College,
+  Lamont underground, the University on Ester Dome, people in between, the Lounsburys at the Clipper) drawn
+  meeting at Lamont's site sheet of 28 Aug 1970. Each point is listed below the drawing with its source.
+  The drawing hides on phones; the list stays.
+- Timeline: 13 rows, now 47. New "Context" category and a fourth chapter, "Around the mine," for work near the
+  mine and at Lamont before 1970. Each row checked against its source text on 23 Nov 2026.
+- New rows outside Context: 1951 USGS report naming Lloyd Lounsbury at the Clipper; 28 Aug 1970 Lamont site sheet
+  naming the Old Clipper Gold Mine; 21 Dec 2000 federal patent.
+- SOURCES.md: context sources (linked, not hosted).
+- OPEN-QUESTIONS.md: the 1970 site sheet conflicts; a section on the years before 1970.
+
+- Site: image carousel simplified to one image at a time, with arrows, swipe and a fade. Click opens the
+  full-screen viewer. The GSAP and Flip animation files and the Codrops-based code are removed.
+
+Corrected
+- Frank Press was at Caltech in 1959, not Lamont (panel report member list). Only Jack Oliver was from Lamont.

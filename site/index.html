@@ -52,7 +52,7 @@
   </div>
   <div class="reel-stage" id="reel-stage" tabindex="0"></div>
   <div class="reel-cap" id="reel-cap"><p class="t"></p><p class="src"></p></div>
-  <p class="reel-hint">Click a side image to bring it to the center. Click the center image to open it full screen. Large scans can be zoomed to full detail.</p>
+  <p class="reel-hint">Use the arrows or swipe. Click the image to open it full screen and zoom.</p>
 </section>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
@@ -82,6 +82,18 @@
   </ol>
 </section>
 
+<section class="strings" id="strings">
+  <div class="reveal">
+    <h2><span class="tag">1951 to 1970</span>Five strings, one knot</h2>
+    <p class="strings-lede">No document puts any instrument inside the Clipper before 17 Aug 1970. The threads that led there run back two decades, all within a few miles of the mine or inside Lamont. They meet on one page: Lamont's site sheet of 28 Aug 1970.</p>
+  </div>
+  <figure class="strings-fig">
+    <svg id="strings-svg" viewBox="0 0 1400 560" role="img" aria-label="Diagram: five dated threads from 1951 to 1970 converging on the August 1970 Lamont site sheet for the Old Clipper Gold Mine. The same facts, with sources, are listed below."></svg>
+    <figcaption>Dots are dated events from the documents listed below. Spacing follows the year. Lines between dots show a thread, not a proven chain of cause.</figcaption>
+  </figure>
+  <div class="strings-list" id="strings-list"></div>
+</section>
+
 <section class="timeline-wrap">
   <div class="tl-head reveal">
     <h2><span class="tag">1918 to 2024</span>Down the drift</h2>
@@ -89,6 +101,7 @@
     <div class="filters" role="group" aria-label="Filter the timeline">
       <button type="button" data-filter="All" class="on">All</button>
       <button type="button" data-filter="Mine">Mine</button>
+      <button type="button" data-filter="Context">Context</button>
       <button type="button" data-filter="Station">Station</button>
       <button type="button" data-filter="Maps">Maps</button>
       <button type="button" data-filter="People">People</button>
@@ -102,11 +115,8 @@
   <p class="foot-big">Every entry is checked against its source, page by page.</p>
   <p>Full citations, rights and open questions: SOURCES.md, RIGHTS.md and OPEN-QUESTIONS.md in this repository.</p>
   <p class="abbr">DTIC (Defense Technical Information Center). DGGS (Alaska Division of Geological and Geophysical Surveys). OFR (Open-File Report). USGS (US Geological Survey). ARDF (Alaska Resource Data File). NOAA (National Oceanic and Atmospheric Administration). FBK (the station's code).</p>
-  <p class="abbr">Image carousel adapted from Codrops "Slideshow Animations" (MIT License). Animation by GSAP and Flip (GSAP standard license).</p>
 </footer>
 
-<script src="vendor/gsap.min.js"></script>
-<script src="vendor/Flip.min.js"></script>
 <script src="timeline.js"></script>
 </body>
 </html>

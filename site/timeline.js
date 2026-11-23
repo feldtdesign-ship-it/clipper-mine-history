@@ -1,7 +1,6 @@
 (function () {
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var hasGsap = typeof window.gsap !== "undefined" && typeof window.Flip !== "undefined";
 
   function drawTrace() {
     var svg = document.getElementById("trace");
@@ -78,10 +77,122 @@
   }
 
   var ERAS = [
-    { key: "mine", title: "The mine", span: "1918 to 1969", test: function (k) { return k < "1970"; } },
-    { key: "station", title: "The station", span: "1970 to 1972", test: function (k) { return k >= "1970" && k < "1973"; } },
-    { key: "after", title: "After the station", span: "late 1970s to 2024", test: function (k) { return k >= "1973"; } }
+    { key: "mine", title: "The mine", span: "1918 to 1969", test: function (k, c) { return k < "1970" && c !== "Context"; } },
+    { key: "around", title: "Around the mine", span: "1957 to 1970, nearby and at Lamont", test: function (k, c) { return c === "Context"; } },
+    { key: "station", title: "The station", span: "1970 to 1972", test: function (k, c) { return k >= "1970" && k < "1973" && c !== "Context"; } },
+    { key: "after", title: "After the station", span: "late 1970s to 2024", test: function (k, c) { return k >= "1973" && c !== "Context"; } }
   ];
+
+  /* Five strings, 1951 to 1970. Every item is a timeline.csv row; keep them in step. */
+  var STRINGS = [
+    { title: "Listening at College", color: "#8fc1e3", items: [
+      { y: 1957.7, row: 0, lab: "Rainier heard at College", yr: "1957", text: "Waves from Rainier, an underground nuclear shot in Nevada, show up on the College seismogram 3,600 km away.", src: "DTIC AD0607639, report p. 5", g: "Document" },
+      { y: 1963.3, row: 0, lab: "Townshend runs the observatory", yr: "1963", text: "Jack Townshend becomes chief of the College Magnetic and Seismological Observatory.", src: "UAF Centennial profile; UAF news, 2012", g: "Reported" },
+      { y: 1963.94, row: 1, lab: "Lamont station opens at College", yr: "10 Dec 1963", text: "Lamont's long-period station at College starts recording, once the cooperating station has built the vault.", src: "DTIC AD0622794, Table I, report p. 4", g: "Document" }
+    ] },
+    { title: "Lamont underground", color: "#d9a38a", items: [
+      { y: 1960.2, row: 0, lab: "1,850 ft down, Sterling Mine, NJ", yr: "early 1960", text: "Lamont installs a strain seismograph 1,850 ft down in an unused drift of the Sterling Mine, Ogdensburg, New Jersey.", src: "Alsop, Sutton and Ewing, JGR 66(2), 1961, p. 631", g: "Document" },
+      { y: 1969.4, row: 1, end: true, lab: "Bulkhead-door tests", yr: "1969", text: "Ogdensburg tests behind two and three bulkhead doors set the rule: instrument tanks in an air-tight vault with a bulkhead door.", src: "DTIC AD0730950, report p. 5", g: "Document" }
+    ] },
+    { title: "The University on Ester Dome", color: "#a9c48f", items: [
+      { y: 1963.0, row: 0, lab: "Observatory on the summit", yr: "1962 to 1963", text: "The Geophysical Institute finishes a two-story aurora observatory near the top of Ester Dome, at about 2,500 ft.", src: "GI Annual Report 1962-63, PDF p. 12", g: "Document" },
+      { y: 1964.0, row: 1, lab: "Seismology, with Lamont gear", yr: "1963 to 1964", text: "The Institute starts seismology. Site noise studies use equipment on loan from Lamont.", src: "GI Annual Report 1963-64, PDF p. 69", g: "Document" }
+    ] },
+    { title: "People in between", color: "#c9bea9", items: [
+      { y: 1959.0, row: 0, lab: "Oliver on test panel", yr: "Jan 1959", text: "Jack Oliver of Lamont sits on the federal Panel on Seismic Improvement, on detecting nuclear tests.", src: "Panel report, 7 Jan 1959, CIA-RDP80B01676R004300120011-2", g: "Document" },
+      { y: 1963.45, row: 1, lab: "Ewing joins Institute advisers", yr: "Jun 1963", text: "Maurice Ewing, Lamont's director, joins the Geophysical Institute's Advisory Committee.", src: "GI Annual Report 1962-63, PDF p. 51", g: "Document" },
+      { y: 1968.5, row: 0, end: true, lab: "Kienle at Lamont", yr: "1968 to 1970", text: "Jurgen Kienle spends two years at Lamont, then joins the Geophysical Institute on 1 Jul 1970.", src: "GI Annual Report 1969-70, PDF p. 128", g: "Document" }
+    ] },
+    { title: "The Lounsburys at the Clipper", color: "#d4a646", items: [
+      { y: 1951.0, row: 0, lab: "Lloyd Lounsbury works the Clipper", yr: "1951", text: "A USGS report: the Clipper is a winding tunnel about 500 ft long, \"worked by Lloyd Lounsbury.\"", src: "USGS OFR 51-46, p. 16", g: "Document" }
+    ] }
+  ];
+
+  function drawStrings() {
+    var svg = document.getElementById("strings-svg");
+    var list = document.getElementById("strings-list");
+    if (!svg || !list) { return; }
+    var ns = "http://www.w3.org/2000/svg";
+    var X0 = 60, X1 = 1000, KX = 1110, KY = 260;
+    function x(yr) { return X0 + (yr - 1950) * (X1 - X0) / 20; }
+    function s(tag, attrs, text) {
+      var e = document.createElementNS(ns, tag), k;
+      for (k in attrs) { if (attrs.hasOwnProperty(k)) { e.setAttribute(k, attrs[k]); } }
+      if (text) { e.textContent = text; }
+      svg.appendChild(e);
+      return e;
+    }
+    [1950, 1955, 1960, 1965, 1970].forEach(function (yr) {
+      s("line", { "class": "s-axis", x1: x(yr), x2: x(yr), y1: 20, y2: 510 });
+      s("text", { "class": "s-axis-t", x: x(yr), y: 540, "text-anchor": "middle" }, String(yr));
+    });
+    var lines = [];
+    STRINGS.forEach(function (st, i) {
+      var y = 60 + i * 100;
+      var first = x(st.items[0].y);
+      s("text", { "class": "s-title", x: X0, y: y - 22, fill: st.color }, st.title);
+      s("path", { "class": "s-line", d: "M" + X0 + "," + y + " L" + first + "," + y, stroke: st.color, "stroke-dasharray": "2 6", opacity: "0.5" });
+      var d = "M" + first + "," + y + " L" + X1 + "," + y + " C" + (X1 + 60) + "," + y + " " + (X1 + 50) + "," + KY + " " + KX + "," + KY;
+      lines.push(s("path", { "class": "s-line", d: d, stroke: st.color }));
+      st.items.forEach(function (it) {
+        s("circle", { "class": "s-dot", cx: x(it.y), cy: y, r: 7, fill: st.color });
+        var t = s("text", { "class": "s-lab", x: it.end ? x(it.y) + 4 : x(it.y) - 4, y: y + 26 + it.row * 19, "text-anchor": it.end ? "end" : "start" });
+        var a = document.createElementNS(ns, "tspan");
+        a.setAttribute("class", "y"); a.textContent = it.yr.replace(/^(early |Jan |Jun |10 Dec )/, "").slice(0, 4) + "  ";
+        t.appendChild(a);
+        t.appendChild(document.createTextNode(it.lab));
+      });
+    });
+    s("circle", { "class": "s-knot-ring", cx: KX, cy: KY, r: 22 });
+    s("circle", { "class": "s-knot", cx: KX, cy: KY, r: 11 });
+    s("text", { "class": "s-knot-t", x: KX + 36, y: KY - 50 }, "Aug 1970");
+    s("text", { "class": "s-knot-t", x: KX + 36, y: KY - 22 }, "Old Clipper Gold Mine");
+    ["Owner: Lloyd Lounsbury", "Contact: Jack Townshend,", "College Observatory", "Lamont site sheet, 28 Aug 1970"].forEach(function (line, k) {
+      s("text", { "class": "s-knot-s", x: KX + 36, y: KY + 8 + k * 20 }, line);
+    });
+
+    STRINGS.forEach(function (st) {
+      var card = el("div", "s-card");
+      card.style.setProperty("--c", st.color);
+      card.appendChild(el("h3", null, st.title));
+      var ol = el("ol");
+      st.items.forEach(function (it) {
+        var li = el("li");
+        var b = el("b", null, it.yr);
+        b.appendChild(el("span", "g", it.g));
+        li.appendChild(b);
+        li.appendChild(el("p", null, it.text));
+        li.appendChild(el("span", "src", it.src));
+        ol.appendChild(li);
+      });
+      card.appendChild(ol);
+      list.appendChild(card);
+    });
+    var knot = el("div", "s-card knot");
+    knot.appendChild(el("h3", null, "Where they meet: 28 Aug 1970"));
+    var kp = el("p", null, "Lamont's site sheet for its five new high-gain stations names the Fairbanks site the \"Old Clipper Gold Mine,\" owned by Lloyd Lounsbury, with Jack Townshend of the College Observatory as principal contact. The install ran 17 Aug to 26 Sep 1970, under the same contract.");
+    knot.appendChild(kp);
+    knot.appendChild(el("span", "src", "DTIC AD0730950, report p. 7; DTIC AD0729918, report p. 1. Document."));
+    knot.appendChild(el("p", "note", "What the strings do not show: who first proposed the Clipper, or any work in the mine before Aug 1970. Those are open questions."));
+    list.appendChild(knot);
+
+    if (reduce || !("IntersectionObserver" in window)) { return; }
+    lines.forEach(function (p) {
+      var len = p.getTotalLength();
+      p.style.strokeDasharray = len;
+      p.style.strokeDashoffset = len;
+    });
+    var io = new IntersectionObserver(function (en) {
+      if (!en[0].isIntersecting) { return; }
+      io.disconnect();
+      lines.forEach(function (p, k) {
+        p.getBoundingClientRect();
+        p.style.transition = "stroke-dashoffset 2.6s cubic-bezier(.45,0,.2,1) " + (k * 0.18) + "s";
+        p.style.strokeDashoffset = "0";
+      });
+    }, { rootMargin: "0px 0px -20% 0px" });
+    io.observe(svg);
+  }
 
   function renderTimeline(rows) {
     var host = document.getElementById("timeline");
@@ -92,7 +203,7 @@
       head.appendChild(el("h3", null, era.title));
       head.appendChild(el("span", null, era.span));
       sec.appendChild(head);
-      rows.filter(function (r) { return era.test(r.sort_key); }).forEach(function (r) {
+      rows.filter(function (r) { return era.test(r.sort_key, r.category); }).forEach(function (r) {
         var row = el("article", "row");
         row.dataset.cat = r.category;
         row.appendChild(el("div", "yr", r.date));
@@ -234,91 +345,42 @@
     var capS = document.querySelector("#reel-cap .src");
     var nEl = document.getElementById("reel-n");
     document.getElementById("reel-t").textContent = ("0" + SLIDES.length).slice(-2);
-    var track = el("div", "r-track");
-    stage.appendChild(track);
-    var tiles = SLIDES.map(function (s, i) {
-      var b = el("button", "r-tile");
-      b.type = "button";
-      b.setAttribute("aria-label", s[2]);
-      var im = document.createElement("img");
-      im.alt = "";
-      im.draggable = false;
-      im.decoding = "async";
-      im.src = "../" + encodeURI(s[0]).replace(/,/g, "%2C").replace(/'/g, "%27");
-      im.addEventListener("load", function () { im.dataset.nh = im.naturalHeight; im.dataset.nw = im.naturalWidth; cap(); center(false); });
-      b.appendChild(im);
-      b.addEventListener("click", function () {
-        if (moved) { return; }
-        if (i === cur) { viewer.open(cur); } else { goTo(i); }
-      });
-      track.appendChild(b);
-      return b;
-    });
-    var cur = 0, moved = false;
-    function center(animate) {
-      var t = tiles[cur];
-      var x = stage.clientWidth / 2 - (t.offsetLeft + t.offsetWidth / 2);
-      if (hasGsap && animate) { gsap.set(track, { x: x }); } else { track.style.transform = "translateX(" + x + "px)"; }
-    }
-    function cap() {
-      tiles.forEach(function (t, k) {
-        var im = t.firstChild;
-        if (!im.dataset.nh) { return; }
-        im.style.maxHeight = k === cur ? "min(100%, " + im.dataset.nh + "px)" : "";
-        im.style.maxWidth = k === cur ? "min(80vw, 1150px, " + im.dataset.nw + "px)" : "";
-      });
-    }
-    function caption() {
+    var img = document.createElement("img");
+    img.className = "r-img";
+    img.draggable = false;
+    stage.appendChild(img);
+    var cur = 0;
+    function url(i) { return "../" + encodeURI(SLIDES[i][0]).replace(/,/g, "%2C").replace(/'/g, "%27"); }
+    function show(i) {
+      cur = (i + SLIDES.length) % SLIDES.length;
+      img.classList.remove("in");
+      img.onload = function () { img.classList.add("in"); };
+      img.src = url(cur);
+      img.alt = SLIDES[cur][2];
       capT.textContent = SLIDES[cur][2];
       capS.textContent = SLIDES[cur][3];
       nEl.textContent = ("0" + (cur + 1)).slice(-2);
+      new Image().src = url((cur + 1) % SLIDES.length);
     }
-    function mark() {
-      tiles.forEach(function (t, k) {
-        t.classList.toggle("cur", k === cur);
-        t.setAttribute("aria-current", k === cur ? "true" : "false");
-      });
-    }
-    function order() {
-      var n = tiles.length, h = Math.floor(n / 2), k;
-      for (k = -h; k < n - h; k += 1) { track.appendChild(tiles[(cur + k + n) % n]); }
-    }
-    function goTo(i) {
-      var next = (i + tiles.length) % tiles.length;
-      if (next === cur) { return; }
-      var anim = hasGsap && !reduce;
-      var before = tiles.map(function (t) { return t.getBoundingClientRect().left; });
-      var state = anim ? Flip.getState(tiles) : null;
-      cur = next; order(); mark(); cap(); center(false); caption();
-      if (anim) {
-        var jumpers = tiles.filter(function (t, k) { return Math.abs(t.getBoundingClientRect().left - before[k]) > stage.clientWidth * 0.6; });
-        Flip.from(state, { duration: 1.1, ease: "power3.inOut", scale: false, simple: true, targets: tiles.filter(function (t) { return jumpers.indexOf(t) < 0; }) });
-        if (jumpers.length) { gsap.fromTo(jumpers, { opacity: 0 }, { opacity: 1, duration: 0.6, delay: 0.5 }); }
-        gsap.fromTo("#reel-cap .t", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.7, delay: 0.35, ease: "power3.out" });
-      }
-    }
-    order(); mark(); caption();
-    requestAnimationFrame(function () { center(false); });
-    window.addEventListener("resize", function () { center(false); });
-    window.addEventListener("load", function () { center(false); });
-    document.getElementById("reel-next").addEventListener("click", function () { goTo(cur + 1); });
-    document.getElementById("reel-prev").addEventListener("click", function () { goTo(cur - 1); });
+    document.getElementById("reel-next").addEventListener("click", function () { show(cur + 1); });
+    document.getElementById("reel-prev").addEventListener("click", function () { show(cur - 1); });
     stage.addEventListener("keydown", function (e) {
-      if (e.key === "ArrowRight") { goTo(cur + 1); e.preventDefault(); }
-      if (e.key === "ArrowLeft") { goTo(cur - 1); e.preventDefault(); }
+      if (e.key === "ArrowRight") { show(cur + 1); e.preventDefault(); }
+      if (e.key === "ArrowLeft") { show(cur - 1); e.preventDefault(); }
+      if (e.key === "Enter") { viewer.open(cur); }
     });
     var sx = null;
-    stage.addEventListener("pointerdown", function (e) { sx = e.clientX; moved = false; });
-    stage.addEventListener("pointermove", function (e) { if (sx !== null && Math.abs(e.clientX - sx) > 8) { moved = true; } });
+    stage.addEventListener("pointerdown", function (e) { sx = e.clientX; });
     stage.addEventListener("pointerup", function (e) {
       if (sx === null) { return; }
       var dx = e.clientX - sx; sx = null;
-      if (Math.abs(dx) > 40) { goTo(cur + (dx < 0 ? 1 : -1)); }
-      setTimeout(function () { moved = false; }, 0);
+      if (Math.abs(dx) > 40) { show(cur + (dx < 0 ? 1 : -1)); } else { viewer.open(cur); }
     });
+    show(0);
   }
 
   drawTrace();
+  drawStrings();
   reel();
   reveals();
   filters();

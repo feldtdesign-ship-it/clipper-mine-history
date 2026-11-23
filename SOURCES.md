@@ -89,6 +89,31 @@ UAF (University of Alaska Fairbanks), NOAA (National Oceanic and Atmospheric Adm
   Magnetometer Profile Data." Scale 1:5,280. 1969. No publisher printed on the sheet.
 - Not in the repo until the publisher is known (see RIGHTS.md). Held on Michael's Mac.
 
+### Context sources, 1951 to 1970 (linked, not hosted)
+All are public. None is copied into this repo.
+- Killeen, P.L., and Mertie, J.B. Jr. "Antimony ore in the Fairbanks district, Alaska." USGS Open-File Report
+  51-46, 1951. doi 10.3133/ofr5146. https://pubs.usgs.gov/of/1951/0046/report.pdf (Clipper: typescript p. 16).
+- "Surface Motions from an Underground Explosion," June 1958. DTIC AD0607639.
+  https://archive.org/details/DTIC_AD0607639 (College seismogram: report p. 5).
+- "Report of the Panel on Seismic Improvement," 7 Jan 1959, with cover memo of 12 Jan 1959. Chairman Lloyd V.
+  Berkner. Declassified in part, 27 Jun 2012. CIA Reading Room CIA-RDP80B01676R004300120011-2.
+  https://archive.org/details/cia-readingroom-document-cia-rdp80b01676r004300120011-2
+- Alsop, L.E., Sutton, G.H., and Ewing, M. "Free Oscillations of the Earth Observed on Strain and Pendulum
+  Seismographs." Journal of Geophysical Research 66(2), Feb 1961. Lamont Contribution 471. Sterling Mine
+  install: p. 631. https://archive.org/details/journal-of-geophysical-research_1961-02_66_2
+- Pomeroy, Paul W. "Establishment of a long-period seismograph network utilizing magnetic tape recording."
+  Lamont Geological Observatory, final report, 1 June 1965. AFCRL-65-527, contract AF19(604)-8485. DTIC AD0622794.
+  https://archive.org/details/DTIC_AD0622794 (College station: Table I, report p. 4).
+- Ward, P.L., and Hade, George (as read from the report form). "Design and Deployment of Five High-Gain,
+  Broad-Band, Long-Period Seismograph Stations." Lamont-Doherty Geological Observatory, 28 Aug 1970. Contract
+  F44620-70-C-0038, ARPA Order 1513. DTIC AD0730950. Report form: "Approved for public release; distribution
+  unlimited." https://archive.org/details/DTIC_AD0730950 (Ogdensburg tests: report p. 5; site sheet: report p. 7).
+  Not hosted: report p. 7 prints 1970 phone numbers.
+- Geophysical Institute, University of Alaska. Annual Reports 1962-63, 1963-64 and 1969-70. UAF ScholarWorks, GI
+  Reports series. https://scholarworks.alaska.edu/uaf_gi_reports/ (page numbers in this repo are PDF pages).
+- BLM General Land Office records, serial patent 50-2001-0164, accession SER-50-2001-0164, 21 Dec 2000.
+  https://glorecords.blm.gov
+
 ## Secondary and oral sources
 
 ### UAF oral history, George Lounsbury, 1992
@@ -114,6 +139,10 @@ UAF (University of Alaska Fairbanks), NOAA (National Oceanic and Atmospheric Adm
 - Mining History Association, "2017 Mining History Association Tour, Tour of Fairbanks Lode Mines,"
   tour leader Paul White, 19 June 2017. Photo gallery page.
 - Link: https://www.mininghistoryassociation.org/LodeMine.htm (link only; no photo copied).
+
+### Jack Townshend profiles
+- UAF Centennial profile, uaf.edu/centennial/uaf100/townshend.php; Ned Rozell, "Jack Townshend's
+  personification of serendipity," UAF news, 6 Sept 2012.
 
 ## Our own work
 - `model/`: two still renders from our Blender model v2. The model is traced from OFR 157 Plate 1, the USMS 2493

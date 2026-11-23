@@ -28,6 +28,16 @@ Star Borough), LiDAR (laser scanning), FBK (the Fairbanks station code).
 - Our reading: "53" in the Lamont report is likely a typo for "51". No document prints 64 51 58 for the station.
   The plat corner position is close to that reading but is a claim corner, not the station.
 
+### The 1970 site sheet disagrees with the 1971 report
+- Lamont's site sheet of 28 Aug 1970 (DTIC AD0730950, report p. 7) and the 1971 installation report
+  (AD0729918) differ:
+  - Rock over the station: 130 m on the sheet, 20 m in the 1971 report (report p. 11).
+  - Longitude: 148.07 W on the sheet, 148 00 20 W (148.006) in 1971. 148.07 W would be about 3 km west of the mine.
+  - Elevation: about 305 m on the sheet, 330 m in 1971.
+  - Latitude on the sheet reads 64.?7 N; the second decimal is blurry (8 or 3).
+- Our reading: the sheet was written during the install, before final survey. 64.87 N would match the mine
+  (about 64.866 N) and supports the "53 is a typo for 51" reading above. Unproven.
+
 ### The abstract says 15 km from the College vault
 - The Lamont 1971 abstract (PDF p. 3) says the tunnel is about 15 km from the WWSSN (World-Wide Standardized
   Seismograph Network) station COL vault. Measured off Figure I-2 it is closer to 11 km.
@@ -68,6 +78,18 @@ Star Borough), LiDAR (laser scanning), FBK (the Fairbanks station code).
 - Our reading: the room shown to the 2013 tour is the old station room. The newsletter does not say so.
 
 ## Open questions
+
+### Before 1970: did anything happen at the Clipper?
+- OFR 157 says "early 1960s" (see above).
+- Every document found so far puts the first instruments in the mine at 17 Aug 1970.
+- What the documents do show near the mine before 1970 (see the "Around the mine" timeline rows): the College
+  seismograph from 1957, Lamont's College station from 10 Dec 1963, the University's Ester Dome observatory from
+  1962 to 1963, and Lamont's own mine station in New Jersey from early 1960.
+- Our reading: an early date for the station may come from memory of this wider work around the mine. Unproven.
+- Who first proposed the Clipper to Lamont? Not known. Jack Townshend was Lamont's contact in Aug 1970.
+  Jurgen Kienle was at Lamont from 1968 to 1970. No document links either man to choosing the mine.
+- Where were the University's 1963 to 1964 site noise studies, run with Lamont's loaned equipment? Not stated.
+
 
 ### People
 - Was Lloyd Lounsbury, station manager in 1970 (Lamont 1971, report p. 1), the same Lloyd who mined the Clipper
