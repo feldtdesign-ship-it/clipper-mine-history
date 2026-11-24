@@ -39,6 +39,7 @@ Star Borough), UAF (University of Alaska Fairbanks).
 | README.md, TIMELINE.md, timeline.csv, SOURCES.md, RIGHTS.md, ORGANIZATIONS.md, OPEN-QUESTIONS.md, CHANGELOG.md | Our own writing | Cleared | |
 | tools/build_timeline.py | Our own work | Cleared | |
 | site/index.html, site/style.css, site/timeline.js | Our own work | Cleared | The site shows only images marked Cleared above. |
+| site/preview.jpg | Our own work, over a crop of DGGS OFR 157 Plate 1 (State of Alaska) | Cleared | Link preview image: the site's title screen. Uses only the Plate 1 crop marked Cleared above. |
 | .gitignore | Our own work | Cleared | |
 | index.html | Our own work | Cleared | Redirect to the site. |
 

@@ -52,3 +52,10 @@ Added
 
 Corrected
 - Frank Press was at Caltech in 1959, not Lamont (panel report member list). Only Jack Oliver was from Lamont.
+
+## 24 Nov 2026, v1.3
+
+Added
+- Site: link preview. When the site link is pasted into an email, message or chat, it now shows a title, a one
+  line description and a picture (site/preview.jpg, the title screen). Preview tags added to index.html and
+  site/index.html. No change to the visible pages or the timeline.
