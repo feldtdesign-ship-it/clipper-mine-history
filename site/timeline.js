@@ -78,7 +78,7 @@
 
   var ERAS = [
     { key: "mine", title: "The mine", span: "1918 to 1969", test: function (k, c) { return k < "1970" && c !== "Context"; } },
-    { key: "around", title: "Around the mine", span: "1957 to 1970, nearby and at Lamont", test: function (k, c) { return c === "Context"; } },
+    { key: "around", title: "Around the mine", span: "1957 to 1975, nearby and at Lamont", test: function (k, c) { return c === "Context"; } },
     { key: "station", title: "The station", span: "1970 to 1972", test: function (k, c) { return k >= "1970" && k < "1973" && c !== "Context"; } },
     { key: "after", title: "After the station", span: "late 1970s to 2024", test: function (k, c) { return k >= "1973" && c !== "Context"; } }
   ];

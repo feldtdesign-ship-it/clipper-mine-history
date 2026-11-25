@@ -59,3 +59,24 @@ Added
 - Site: link preview. When the site link is pasted into an email, message or chat, it now shows a title, a one
   line description and a picture (site/preview.jpg, the title screen). Preview tags added to index.html and
   site/index.html. No change to the visible pages or the timeline.
+
+## 25 Nov 2026, v1.4
+
+Added
+- Timeline: 10 new rows, 57 in all. Seven are about the wider program (the sister stations at Charters Towers,
+  Chiang Mai and Eilat; the Toledo delay; the stated distance of two stations from presumed test sites; the
+  handover to NOAA; Ogdensburg staffing in 1975). Three are about Fairbanks (start of recording and early
+  faults; detection range; the February to March 1972 test month).
+- Sources: nine more Lamont reports listed in SOURCES.md, each linked to the Internet Archive. None is hosted
+  here, because each prints addresses or phone numbers.
+- Open questions: why the station closed; Toledo; the "M. Connor" reading; three new conflicts in the sources.
+
+Changed
+- The two April 1972 close-out rows now also cite the 1972 semi-annual report (DTIC AD0751960), where the same
+  sentences are printed legibly.
+- Site: the "Around the mine" chapter label now reads 1957 to 1975.
+
+How this update was checked
+- Twelve Lamont reports were read start to end from their text layer. Every page a new row cites was also
+  checked against the page image.
+- Not examined: the photographs in those reports, and the engineering drawings and parts lists.

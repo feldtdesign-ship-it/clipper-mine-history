@@ -109,6 +109,42 @@ All are public. None is copied into this repo.
   F44620-70-C-0038, ARPA Order 1513. DTIC AD0730950. Report form: "Approved for public release; distribution
   unlimited." https://archive.org/details/DTIC_AD0730950 (Ogdensburg tests: report p. 5; site sheet: report p. 7).
   Not hosted: report p. 7 prints 1970 phone numbers.
+- Sykes, Lynn. "Long-Period Seismological Research Program," final report, 30 April 1971. Lamont-Doherty
+  Geological Observatory. Contract F44620-70-C-0038, ARPA Order 1513. DTIC AD0729897. Report form: "Approved
+  for public release; distribution unlimited." https://archive.org/details/DTIC_AD0729897 (Toledo delay: report
+  p. 3; start of recording and early faults: Table I, report p. 5; Fairbanks detection: report p. 11 and Table 3).
+  Not hosted: the program page prints 1971 office phone numbers.
+- Rynn, John M. W. "High-Gain, Long-Period Seismograph Station Installation Report, Charters Towers, Australia."
+  Lamont-Doherty Geological Observatory, 31 March 1971. Contract F44620-70-C-0038. DTIC AD0729901. "Approved for
+  public release; distribution unlimited." https://archive.org/details/DTIC_AD0729901 (crew and dates: report
+  p. 2; location and the gold mine tunnel: report p. 3). Not hosted: prints 1971 addresses and phone numbers.
+- Murphy, Andrew J. "High-Gain, Long-Period Seismograph Station Installation Report, Chiang Mai, Thailand."
+  Lamont-Doherty Geological Observatory, 31 March 1971. Contract F44620-70-C-0038. DTIC AD0729898. "Approved for
+  public release; distribution unlimited." https://archive.org/details/DTIC_AD0729898 (crew and dates: report
+  p. 2; location: report p. 3; the surface vault: PDF pp. 22 and 23). Not hosted: prints 1971 addresses.
+- Johnson, Tracy L. "High-Gain, Long-Period Seismograph Station Installation Report, Eilat, Israel."
+  Lamont-Doherty Geological Observatory, 31 March 1971. Contract F44620-70-C-0038. DTIC AD0729899. "Approved for
+  public release; distribution unlimited." https://archive.org/details/DTIC_AD0729899 (crew and dates: report
+  p. 1; location: report p. 3; tunnel history: PDF p. 14). Not hosted: prints 1971 addresses and phone numbers.
+- Sykes, Lynn R., and Savino, John M. "Long Period Seismological Research Program," semi-annual report,
+  25 October 1972. Contract F44620-71-C-0082, ARPA Order 1774. DTIC AD0751960. "Approved for public release;
+  distribution unlimited." https://archive.org/details/DTIC_AD0751960 (Fairbanks close-out and handover to
+  NOAA: report pp. 1 to 3). Not hosted: the program page prints office phone numbers.
+- Sykes, Lynn R., and Savino, John M. "Long-Period Seismological Research Program," semi-annual report,
+  29 October 1973. Contract F44620-71-C-0082, ARPA Order 1827. DTIC AD0778950. "Approved for public release;
+  distribution unlimited." https://archive.org/details/DTIC_AD0778950 (International Seismic Month: report
+  pp. 6 to 8 and Figure 3a). Not hosted: the program page prints office phone numbers.
+- Sykes, Lynn R., and Savino, John M. "Long-Period Seismological Research Program," annual report, 14 June 1974.
+  Contract F44620-71-C-0082. DTIC AD0784837. https://archive.org/details/DTIC_AD0784837 (final International
+  Seismic Month list of 996 entries: report p. 6). Read in full; cited only in a note.
+- Sykes, Lynn R., and Forsyth, Donald W. "Long-Period Seismological Research Program," semi-annual report for
+  1 May to 31 October 1975, dated 31 December 1975. Contract F44620-71-C-0082. DTIC ADA108522. "Approved for
+  public release; distribution unlimited." https://archive.org/details/DTIC_ADA108522 (Ogdensburg staffing:
+  report p. 2). Not hosted: the program page prints office phone numbers.
+- Read in full for this update but not cited in the timeline: Lamont 1974 semi-annual report (DTIC ADA003735)
+  and "High-Gain, Long-Period Seismograph Station Instrumentation," Volumes I and II, 31 March 1971 (DTIC
+  AD0729902 and AD0729903). Links: https://archive.org/details/DTIC_ADA003735 ,
+  https://archive.org/details/DTIC_AD0729902 , https://archive.org/details/DTIC_AD0729903
 - Geophysical Institute, University of Alaska. Annual Reports 1962-63, 1963-64 and 1969-70. UAF ScholarWorks, GI
   Reports series. https://scholarworks.alaska.edu/uaf_gi_reports/ (page numbers in this repo are PDF pages).
 - BLM General Land Office records, serial patent 50-2001-0164, accession SER-50-2001-0164, 21 Dec 2000.

@@ -67,6 +67,23 @@ Star Borough), LiDAR (laser scanning), FBK (the Fairbanks station code).
 - The UAF archive record calls AAF-1869 a 55-second clip. Our copy runs about 74.5 seconds.
 - Our reading: the extra time is archive leader or a slate. Not checked.
 
+### The Fairbanks abstract says three bulkhead doors; the report body says two
+- The abstract of the 1971 Fairbanks report repeats a sentence used in all the installation reports: "a chamber
+  sealed from the environment by three ship-type bulkhead doors."
+- The body of the same report says "Only two bulkhead doors (#5100) were installed." The timeline uses two.
+- The three sister stations each report three doors.
+
+### Eilat: "Mine" on the 1970 site sheet, a purpose-built tunnel in the 1971 report
+- The 1970 site sheet (DTIC AD0730950, PDF p. 10) gives the Eilat station type as "Mine".
+- The 1971 Eilat report (DTIC AD0729899, PDF p. 14) says the tunnel "was constructed as a geophysical observatory
+  in 1968". The timeline follows the 1971 report.
+
+### The 1972 test month is printed two ways
+- AD0751960 (report p. 7) prints "20 March - 20 February, 1972". AD0778950 (report p. 6) prints "20 February
+  1972 through 19 March 1972". The timeline uses the second.
+- The 1973 count rests on a preliminary list of 840 events. The 1974 annual report (DTIC AD0784837, report p. 6)
+  says the final list had 996 entries and does not restate the sentence about five stations.
+
 ## Our inferences, not proven
 
 ### Shaft
@@ -77,7 +94,23 @@ Star Borough), LiDAR (laser scanning), FBK (the Fairbanks station code).
 ### The Nash's News room
 - Our reading: the room shown to the 2013 tour is the old station room. The newsletter does not say so.
 
+### "M. Connor" at Ogdensburg in 1975
+- Document: a 1975 Lamont report names "M. Connor" as the one technician at the Ogdensburg observatory.
+- Document: the 1971 Fairbanks and Eilat reports name crew member "Merrill Conner". The 1971 instrumentation
+  report (DTIC AD0729902, report p. 1) lists a contributor "Merrill Connor".
+- Our reading: likely the same man. No document gives the 1975 technician a first name. Unproven.
+
 ## Open questions
+
+### Why did the Fairbanks station close after two years?
+- The reports give the date and the method (April 1972, a two-man team, equipment shipped to Albuquerque).
+- None of the twelve Lamont reports read for the 25 Nov 2026 update gives a reason.
+- Five more reports on the two contracts have been asked of the Library of Congress: DTIC AD735765, AD765377,
+  AD746798, AD752001 and ADA024627.
+
+### Toledo
+- Planned as the fifth station; delayed to spring 1971. No installation report for it has been found.
+- Who installed it, and when did it start recording?
 
 ### Before 1970: did anything happen at the Clipper?
 - OFR 157 says "early 1960s" (see above).
