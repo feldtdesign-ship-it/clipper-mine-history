@@ -24,9 +24,10 @@ NOAA (National Oceanic and Atmospheric Administration), UAF (University of Alask
   T. 1 N., R. 2 W., Fairbanks Meridian. (Document. OFR 157 p. 1.)
 - Development work began in 1927. (Document. OFR 157 p. 1.)
 - By 1932 a 235 to 250 ft drift had been driven on a thin, steep vein. (Document. ARDF FB047, printed p. 101, citing Hill 1933 and Pilgrim.)
-- The owner at that time, Lloyd Lounsbury, mined most of those workings by hand. (Reported. D. Wietchy, oral communication, 2000, cited in ARDF FB047, printed p. 101.)
-- 19 tons of ore were milled in 1937 and 25 tons in 1938, at about 0.8 oz gold per ton. (Document. ARDF FB047, printed p. 102, citing Reed 1938.)
-- The best years were 1937 to 1942: about 1,400 oz of gold, worth $50,000. (Reported. G.P. Lounsbury, in OFR 157 p. 3.)
+- Lloyd Lounsbury mined most of those workings by hand. A 2000 oral source calls him the owner at that time. (Reported. D. Wietchy, oral communication, 2000, cited in ARDF FB047, printed p. 101.)
+- In 1938 the mine had seven other owners and was "under lease to Lloyd P. Lounsbury", who worked it alone by hand. (Document. Reed 1938, printed pp. 8 to 9.) The two sources do not agree. See OPEN-QUESTIONS.md.
+- About 19 tons of ore were produced in 1937 and about 25 tons in 1938, worth $28 to $30 a ton. (Document. Reed 1938, printed p. 9. OFR 157 p. 3 restates this as about 0.8 oz gold per ton.)
+- The best years were 1937 to 1942: about 1,400 oz of gold, worth $50,000. (Reported. G.P. Lounsbury, in OFR 157 p. 3. No mill or mint record on file confirms the figure.)
 - Lloyd Lounsbury, G.P. Lounsbury's father, ran the ore through a Blake jaw crusher and a 10 ton per day Straub ball mill at the mine. (Reported. G.P. Lounsbury, in OFR 157 p. 3.)
 - In the late 1960s the mine and mill were open for guided tours. (Reported. G.P. Lounsbury, in OFR 157 p. 3.)
 
@@ -50,7 +51,8 @@ NOAA (National Oceanic and Atmospheric Administration), UAF (University of Alask
 ## After the station
 
 - In 1982 state geologists mapped about 800 ft of workings. G.P. Lounsbury was the owner. (Document. OFR 157 p. 1.)
-- The USMS 2493 Grass Valley plat, claim of James G. and George H. Lounsbury, was recorded in 2001. (Document. Plat, recording number 50-2001-0164.)
+- The plat of Mineral Survey No. 2493, Grass Valley, claim of James G. and George H. Lounsbury, was certified by the BLM (Bureau of Land Management) in December 1988. (Document. Plat, certification block.)
+- A federal patent for the Grass Valley claim was issued on 21 December 2000. (Document. BLM General Land Office records, serial patent 50-2001-0164.)
 - In July 2013 Clutch and Lorna Lounsbury hosted a car club picnic and mine tour. (Reported. Nash's News, Aug 2013, p. 9.)
 - In June 2017 the Mining History Association toured the mine. (Reported. mininghistoryassociation.org/LodeMine.htm.)
 

@@ -80,3 +80,34 @@ How this update was checked
 - Twelve Lamont reports were read start to end from their text layer. Every page a new row cites was also
   checked against the page image.
 - Not examined: the photographs in those reports, and the engineering drawings and parts lists.
+
+## 28 Nov 2026, v1.5
+
+Corrected
+- Ownership in the 1930s. The timeline and README called Lloyd Lounsbury "the owner" on one oral source from
+  2000. Reed 1938 (printed pp. 8 to 9) names seven other owners and says the mine was "under lease to Lloyd P.
+  Lounsbury." Both are kept, the conflict is marked, and a new 1938 row quotes Reed.
+- Production in 1937 and 1938. Reed gives about 19 and about 25 tons "produced", worth $28 to $30 a ton. The
+  "0.8 oz per ton" figure is OFR 157's restatement, not Reed's. The two rows now cite Reed directly.
+- The plat. It was certified by the BLM in December 1988. The old row dated it 2001 and called 50-2001-0164 a
+  recording number. That number matches the 21 Dec 2000 patent serial. The row is redated; README and
+  SOURCES.md follow.
+
+Added
+- Timeline: 5 new rows, 62 in all. The 1932 assessment work; the 1938 lease; the Toledo installation of 15 Jul
+  to 17 Aug 1971 and its cited installation report by "Cory, S.E."; the Fairbanks tape deck failure of 22 Aug
+  to 30 Oct 1971; and Lamont's 1973 statement that horizontal seismometers belong 150 to 200 m down.
+- Sources: the two territorial mining reports (1932 and 1938). Cited, not hosted yet.
+- Open questions: owner or lessee; production; "Cory, S.E."; whether the claim was federal land in 1970;
+  whether the 1973 depth finding explains the Fairbanks noise; Herbert Mann.
+
+Settled
+- Toledo: when it was installed (was open).
+- The "PBK" tape deck reading: the page prints FBK (was unchecked).
+- The plat's certification year, 1988 (was "may be").
+
+How this update was checked
+- Every page cited by a new or corrected row was looked at as a page image on 28 Nov 2026.
+- Not done: the patent itself has not been saved or read. Its date and names still rest on the BLM web record
+  as read on 23 Nov 2026. The survey dates on the plat are still unreadable.
+- Not changed: the site pages. The site reads timeline.csv, so the new rows will show there.

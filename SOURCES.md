@@ -61,11 +61,25 @@ UAF (University of Alaska Fairbanks), NOAA (National Oceanic and Atmospheric Adm
 - Repo: `documents/USGS 2001, OFR 01-426, Alaska Resource Data File, Fairbanks quadrangle.pdf`
 - Link: https://pubs.usgs.gov/of/2001/0426/
 
+### Territorial mining reports, 1932 and 1938 (not hosted yet)
+Both are public reports of the Territory of Alaska, kept today by DGGS in its Miscellaneous Report (MR) series.
+Copies are held in the project's source folder. Neither is in this repo yet, and no link has been checked.
+- Reed, Irving, Associate Mining Engineer. "Lode Mining and Development in the Year 1938, the Fairbanks
+  District, Alaska." Report to B.D. Stewart, Commissioner of Mines, Territory of Alaska Department of Mines.
+  DGGS Miscellaneous Report 194-6. (Clipper Mine: printed pp. 8 to 9, PDF pp. 9 to 10. Title read from a faint
+  cover page.)
+- Territory of Alaska Mining Department, Fairbanks. Report to B.D. Stewart on lode mining in the Interior of
+  Alaska in 1932. DGGS Miscellaneous Report 194-4, which holds the reports for 1930, 1931 and 1932. OFR 157
+  cites these as Pilgrim. (Clipper vein: report for 1932, printed p. 8, PDF p. 26.)
+
 ### USMS 2493 Grass Valley plat
 - Mineral Survey No. 2493, Alaska, claim of James G. and George H. Lounsbury, known as Grass Valley (lode),
   Section 32, T. 1 N., R. 2 W., Fairbanks Meridian. US Department of the Interior, BLM, Division of Cadastral
-  Survey. Recording number 50-2001-0164 on the left margin.
-- Repo: `maps/USMS 2493 Grass Valley mineral survey plat, recorded 2001.jpg`
+  Survey. Certified December 1988 (handwritten; the day reads 20 or 26). Stamped 50-2001-0164 on the left
+  margin, with no label, and BK 01244 PG 0923 on the right margin. Corrected 28 Nov 2026: 50-2001-0164 is not a
+  recording number. It matches the serial of the 21 Dec 2000 patent listed below.
+- Repo: `maps/USMS 2493 Grass Valley mineral survey plat, recorded 2001.jpg` (the file name is kept; the copy
+  is a recorded one, but the plat itself dates from 1988).
 - Link: none yet. Public record at the Alaska Recorder's Office, Fairbanks district.
 
 ### USGS topographic maps
